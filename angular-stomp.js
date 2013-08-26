@@ -20,6 +20,10 @@ angular.module('AngularStomp', []).
             })
         }
 
+        NGStomp.prototype.unsubscribe = function(queue, headers) {
+            this.stompClient.unsubscribe(queue, headers);
+        }
+
         NGStomp.prototype.send = function(queue, headers, data) {
             this.stompClient.send(queue, headers, data);
         }
